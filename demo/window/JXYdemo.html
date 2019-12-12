@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport"
+		content="width=device-width, ,user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>学生信息管理系统</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	<style>
+		#header {
+			width: 100%;
+			padding-left: 12px;
+			background-color: rgb(128, 158, 192);
+			color: #fff;
+			font-size: 22px;
+			line-height: 48px;
+		}
+
+		#menu {
+			width: 100vw;
+			height: 100vh;
+		}
+
+		#menu2>div {
+			text-indent: 15px;
+		}
+
+		.layout-split-west {
+			min-width: 180px !important;
+		}
+
+		main {
+			margin-top: 50px;
+			margin-left: 50px;
+			color: red;
+			font-size: 50px;
+
+		}
+
+		#menu2 a>div:hover {
+			background: #fff !important;
+		}
+	</style>
+</head>
+
+<body id="body">
+	<div class="easyui-layout" id="menu">
+		<div id="header" data-options="region:'north'" style="height:50px">
+			学生信息管理系统
+		</div>
+		<div data-options="region:'south',split:true"
+			style="height:30px; background: rgb(211,225,240);overflow: hidden;"></div>
+		<div data-options="region:'west',split:true" title="系统菜单" style="width:100px;">
+			<div id="menu2" class="easyui-accordion" data-options="multiple:false,selected:3" style="width:100%;">
+				<div title="学生信息管理" style="overflow:auto;">
+					<a href="javascript:" style="text-decoration:none;">
+						<div style="height:32px;line-height:32px;text-indent: 35px;background:rgb(237, 244, 255);color:
+							#193366;">
+							学生列表</div>
+					</a>
+				</div>
+				<div title="班级信息管理">
+					<p></p>
+				</div>
+				<div title="教师信息管理">
+					<p></p>
+				</div>
+				<div title="系统管理">
+					<a href="javascript:" style="text-decoration:none;">
+						<div style="height:32px;line-height:32px;text-indent: 35px;background:rgb(237, 244, 255);color:
+									#193366;">
+							欢迎访问</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div data-options="region:'center',title:' '">
+			<main>
+				欢迎使用学生成绩管理系统！
+			</main>
+			<div id="timeShow" style="height: 50px;">
+
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	var t = null;
+	function time() {
+		dt = new Date();
+		var y = dt.getFullYear();
+		var h = dt.getHours();
+		var m = dt.getMinutes();
+		var s = dt.getSeconds();
+		document.getElementById("timeShow").innerHTML = "当前时间：" + y + "年" + h + "时" + m + "分" + s + "秒";
+		t = setTimeout(time, 1000);
+	}
+	window.οnlοad = function () { time() }
+</script>
+
+</html>
